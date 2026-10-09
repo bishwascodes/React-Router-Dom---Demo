@@ -11,8 +11,10 @@ import About from './pages/About.tsx'
 import Contact from './pages/Contact.tsx'
 import Pokemon from './pages/Pokemon.tsx'
 
+
+
+
 function App() {
-const [count, setCount] = useState(0)
 
 return (
   <>
