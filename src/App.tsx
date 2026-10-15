@@ -10,36 +10,41 @@ import Home from './pages/Home.tsx'
 import About from './pages/About.tsx'
 import Contact from './pages/Contact.tsx'
 import Pokemon from './pages/Pokemon.tsx'
+import NotFound from './pages/NotFound.tsx'
 
 
 
 
 function App() {
 
-return (
-  <>
+  return (
+    <>
 
-    <BrowserRouter>
-      <header>
-        <nav>
-          <Link className="nav-link" to="/">Home</Link>
-          <Link className="nav-link" to="/about">About</Link>
-          <Link className="nav-link" to="/pokemon">Pokemon</Link>
-          <Link className="nav-link" to="/contact">Contact</Link>
-        </nav>
-      </header>
+      <BrowserRouter>
+        <header>
+          <nav>
+            <Link className="nav-link" to="/">Home</Link>
+            <Link className="nav-link" to="/about">About</Link>
+            <Link className="nav-link" to="/pokemon">Pokemon</Link>
+            <Link className="nav-link" to="/contact">Contact</Link>
+          </nav>
+        </header>
 
+        <main>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/pokemon" element={<Pokemon />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/pokemon/:id" element={<Pokemon />} />
-      </Routes>
-    </BrowserRouter>
-  </>
-)
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/pokemon" element={<Pokemon />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/pokemon/:id" element={<Pokemon />} />
+            {/* For 404 Page */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+      </BrowserRouter>
+    </>
+  )
 }
 
 export default App
