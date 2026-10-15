@@ -4,5 +4,7 @@ export type pokemon = {
     height: number
     weight: number
     name: string
-    image: string
+    sprites: {
+        front_default: string
+    }
 }
